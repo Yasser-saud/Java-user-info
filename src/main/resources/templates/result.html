@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+</head>
+<body>
+    <h1>user info is: </h1>
+    <p style="font-size: 20px">first name: <Strong th:text="${user.firstName}"></Strong></p>
+    <p style="font-size: 20px">last name: <Strong th:text="${user.lastName}"></Strong></p>
+    <br/>
+    <h1>Edit info</h1>
+    <form action="#" th:action="@{/edit}" method="post">
+        <label>First name</label>
+        <input type="text" name="firstName" placeholder="first name"/>
+        <br/>
+        <br/>
+        <label>Last name</label>
+        <input type="text" name="lastName" placeholder="last name"/>
+        <br/>
+        <br/>
+        <button type="submit">Save</button>
+    </form>
+</body>
+</html>

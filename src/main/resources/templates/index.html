@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+</head>
+<body>
+
+    <div th:if="${#request.getParameter('error') != null}">
+        <h3 th:if="${#request.getParameter('error').equals('1')}" style="color:red">user positive number</h3>
+        <h3 th:if="${#request.getParameter('error').equals('2')}" style="color:red">no user found!</h3>
+    </div>
+
+    <h1>Search for a user</h1>
+
+    <form action="#" th:action="@{/search}"  method="get">
+        <label>User id</label>
+        <br/>
+        <input type="number" name="userID" value="0" min="0">
+        <br/>
+        <button type="submit">Search</button>
+    </form>
+
+</body>
+</html>
